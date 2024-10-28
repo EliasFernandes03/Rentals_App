@@ -13,5 +13,6 @@ WORKDIR /var/www/html
 # Exponha a porta 8000 para acessar a aplicação na máquina host
 EXPOSE 8000
 
-# Comando padrão para iniciar um servidor embutido do PHP
-CMD ["php", "-S", "0.0.0.0:8000"]
+# No final do Dockerfile
+CMD ["php", "-S", "0.0.0.0:8000", "-t", "/var/www/html/public"]
+
