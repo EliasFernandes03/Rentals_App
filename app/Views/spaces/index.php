@@ -22,7 +22,7 @@ include dirname(__DIR__) . '/layouts/navbar.php';
                     <td><?= htmlspecialchars($space['description']); ?></td>
                     <td><?= htmlspecialchars($space['price']); ?></td>
                     <td>
-                        <a href="/spaces/edit/<?= $space['id']; ?>" class="btn btn-warning">Editar</a>
+                        <a href="/update/<?= $space['id']; ?>" class="btn btn-warning">Editar</a>
                         <a href="/spaces/delete/<?= $space['id']; ?>" class="btn btn-danger">Excluir</a>
                     </td>
                 </tr>

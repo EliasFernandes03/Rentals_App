@@ -22,7 +22,7 @@ class Space
     {
         $space = $this->db->prepare("SELECT * FROM spaces WHERE id= :id");
         $space->bindParam(':id', $id);
-        $space->execute;
+        $space->execute();
         return $space->fetch(PDO::FETCH_ASSOC);
     }
 
@@ -33,6 +33,16 @@ class Space
         $space->bindParam(':name', $data['name']);
         $space->bindParam(':description', $data['description']);
         $space->bindParam(':price', $data['price']);
+        $space->execute();
+    }
+
+    public function updateSpace($id, $data)
+    {
+        $space = $this->db->prepare("UPDATE spaces SET name = :name, description = :description, price = :price WHERE id = :id");
+        $space->bindParam(':name', $data['name']);
+        $space->bindParam(':description', $data['description']);
+        $space->bindParam(':price', $data['price']);
+        $space->bindParam(':id', $id);
         $space->execute();
     }
 }

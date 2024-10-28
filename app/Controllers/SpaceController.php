@@ -34,4 +34,15 @@ class SpaceController
             include __DIR__ . '../../Views/spaces/create.php';
         }
     }
+
+    public function update($id)
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->spaceModel->updateSpace($id, $_POST);
+            header('Location: /');
+        } else {
+            $space = $this->spaceModel->getOneSpace($id);
+            include __DIR__ . '../../Views/spaces/update.php';
+        }
+    }
 }
