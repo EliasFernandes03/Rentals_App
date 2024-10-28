@@ -6,8 +6,6 @@ $controller = new SpaceController($db);
 
 if ($_SERVER['REQUEST_URI'] === '/') {
     $controller->listSpaces();
-}
-
-if ($_SERVER['REQUEST_URI'] === '/batata') {
-    echo 'Oi som';
+} elseif ($_SERVER['REQUEST_URI'] === '/create') {
+    $controller->create();
 }

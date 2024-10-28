@@ -5,7 +5,7 @@ include dirname(__DIR__) . '/layouts/navbar.php';
 
 <div class="container mt-5">
     <h1>Espaços Disponíveis</h1>
-    <a href="/spaces/create" class="btn btn-primary">Adicionar Espaço</a>
+    <a href="/create" class="btn btn-primary">Adicionar Espaço</a>
     <table class="table mt-3">
         <thead>
             <tr>
