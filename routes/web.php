@@ -14,6 +14,8 @@ if ($requestUri === '/') {
 } elseif (preg_match('/^\/update\/(\d+)$/', $requestUri, $matches)) {
     $id = $matches[1];
     $controller->update($id);
+} elseif (preg_match('/^\/spaces\/delete\/(\d+)$/', $_SERVER['REQUEST_URI'], $matches)) {
+    $controller->delete($matches[1]);
 } else {
     echo "Route not found.";
 }

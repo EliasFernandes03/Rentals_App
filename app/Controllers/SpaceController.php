@@ -45,4 +45,10 @@ class SpaceController
             include __DIR__ . '../../Views/spaces/update.php';
         }
     }
+
+    public function delete($id)
+    {
+        $this->spaceModel->deleteSpace($id);
+        header('Location: /');
+    }
 }

@@ -45,4 +45,11 @@ class Space
         $space->bindParam(':id', $id);
         $space->execute();
     }
+
+    public function deleteSpace($id)
+    {
+        $space = $this->db->prepare("DELETE FROM spaces WHERE id=:id");
+        $space->bindParam(':id', $id);
+        $space->execute();
+    }
 }
