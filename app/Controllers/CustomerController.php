@@ -27,4 +27,9 @@ class CustomerController
             include __DIR__ . '../../Views/customer/create.php';
         }
     }
+    public function deleteCustomer($id)
+    {
+        $this->customerModel->deleteCustomer($id);
+        header('Location: /listCustomer');
+    }
 }

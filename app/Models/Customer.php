@@ -19,7 +19,7 @@ class Customer
     public function createCustomer($data)
     {
         $customer = $this->db->prepare("INSERT INTO customers(name,email,phone) VALUES (:name,:email,:phone )");
-        $customer->bindParam(':name' , $data['name']);
+        $customer->bindParam(':name', $data['name']);
         $customer->bindParam(':email', $data['email']);
         $customer->bindParam(':phone', $data['phone']);
         $customer->execute();
@@ -30,5 +30,11 @@ class Customer
         $customer->bindParam(':id', $id);
         $customer->execute();
         return $customer->fetch(PDO::FETCH_ASSOC);
+    }
+    public function deleteCustomer($id)
+    {
+        $customer = $this->db->prepare("DELETE from customers WHERE id=:id");
+        $customer->bindParam(':id', $id);
+        $customer->execute();
     }
 }
