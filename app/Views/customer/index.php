@@ -22,7 +22,7 @@ include dirname(__DIR__) . '/layouts/navbar.php';
                     <td><?= htmlspecialchars($customer['email']); ?></td>
                     <td><?= htmlspecialchars($customer['phone']); ?></td>
                     <td>
-                        <a href="/update/<?= $customer['id']; ?>" class="btn btn-warning">Editar</a>
+                        <a href="/customers/update/<?= $customer['id']; ?>" class="btn btn-warning">Editar</a>
                         <a href="/customers/delete/<?= $customer['id']; ?>" class="btn btn-danger">Excluir</a>
                     </td>
                 </tr>

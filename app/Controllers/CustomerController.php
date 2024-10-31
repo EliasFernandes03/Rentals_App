@@ -32,4 +32,15 @@ class CustomerController
         $this->customerModel->deleteCustomer($id);
         header('Location: /listCustomer');
     }
+    
+    public function updateCustomer($id)
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->customerModel->updateCustomer($id, $_POST);
+            header('Location: /listCustomer');
+        } else {
+            $customer = $this->customerModel->getOneCustomer($id);
+            include __DIR__ . '../../Views/customer/update.php';
+        }
+    }
 }

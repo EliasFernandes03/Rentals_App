@@ -19,6 +19,7 @@ $routes = [
     '#^/listCustomer$#' => [$customerController, 'listCustomers'],
     '#^/createCustomer$#' => [$customerController, 'createCustomer'],
     '#^/customers/delete/(\d+)$#' => [$customerController, 'deleteCustomer'],
+    '#^/customers/update/(\d+)$#' => [$customerController, 'updateCustomer'],
 ];
 
 $routeFound = false;
