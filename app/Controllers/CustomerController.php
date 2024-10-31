@@ -18,4 +18,13 @@ class CustomerController
         $customers = $this->customerModel->getAllCustomers();
         include __DIR__ . '../../Views/customer/index.php';
     }
+    public function createCustomer()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->customerModel->createCustomer($_POST);
+            header('Location:/listCustomer');
+        } else {
+            include __DIR__ . '../../Views/customer/create.php';
+        }
+    }
 }

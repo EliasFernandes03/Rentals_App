@@ -13,10 +13,11 @@ $requestUri = $_SERVER['REQUEST_URI'];
 $routes = [
     '#^/$#' => [$spaceController, 'showHome'],
     '#^/list$#' => [$spaceController, 'listSpaces'],
-    '#^/create$#' => [$spaceController, 'create'],             
-    '#^/update/(\d+)$#' => [$spaceController, 'update'],       
-    '#^/spaces/delete/(\d+)$#' => [$spaceController, 'delete'], 
-    '#^/listCustomer$#' => [$customerController, 'listCustomers'], 
+    '#^/create$#' => [$spaceController, 'create'],
+    '#^/update/(\d+)$#' => [$spaceController, 'update'],
+    '#^/spaces/delete/(\d+)$#' => [$spaceController, 'delete'],
+    '#^/listCustomer$#' => [$customerController, 'listCustomers'],
+    '#^/createCustomer$#' => [$customerController, 'createCustomer'],
 ];
 
 $routeFound = false;
