@@ -7,7 +7,9 @@ $controller = new SpaceController($db);
 
 $requestUri = $_SERVER['REQUEST_URI'];
 
-if ($requestUri === '/') {
+if($requestUri === '/'){
+    $controller->showHome();
+}elseif ($requestUri === '/list') {
     $controller->listSpaces();
 } elseif ($requestUri === '/create') {
     $controller->create();
@@ -16,6 +18,6 @@ if ($requestUri === '/') {
     $controller->update($id);
 } elseif (preg_match('/^\/spaces\/delete\/(\d+)$/', $_SERVER['REQUEST_URI'], $matches)) {
     $controller->delete($matches[1]);
-} else {
+}  else {
     echo "Route not found.";
 }

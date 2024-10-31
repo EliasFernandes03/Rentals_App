@@ -12,7 +12,10 @@ class SpaceController
     {
         $this->spaceModel = new Space($db);
     }
-
+    public function showHome() 
+    {
+        include __DIR__ . '../../Views/spaces/home.php';
+    }
     public function listSpaces()
     {
         $spaces = $this->spaceModel->getAllSpaces();
