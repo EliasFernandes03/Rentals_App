@@ -12,7 +12,7 @@ class SpaceController
     {
         $this->spaceModel = new Space($db);
     }
-    public function showHome() 
+    public function showHome()
     {
         include __DIR__ . '../../Views/spaces/home.php';
     }
@@ -32,7 +32,7 @@ class SpaceController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $this->spaceModel->createSpace($_POST);
-            header('Location: /');
+            header('Location: /list');
         } else {
             include __DIR__ . '../../Views/spaces/create.php';
         }
@@ -42,7 +42,7 @@ class SpaceController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $this->spaceModel->updateSpace($id, $_POST);
-            header('Location: /');
+            header('Location: /list');
         } else {
             $space = $this->spaceModel->getOneSpace($id);
             include __DIR__ . '../../Views/spaces/update.php';
@@ -52,6 +52,6 @@ class SpaceController
     public function delete($id)
     {
         $this->spaceModel->deleteSpace($id);
-        header('Location: /');
+        header('Location: /list');
     }
 }
