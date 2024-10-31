@@ -63,7 +63,7 @@
                 <a href="/list">Spaces</a>
             </div>
             <div class="buttons">
-                <a href="/list">Customers</a>
+                <a href="/listCustomer">Customers</a>
             </div>
             <div class="buttons">
                 <a href="/list">Rentals</a>
