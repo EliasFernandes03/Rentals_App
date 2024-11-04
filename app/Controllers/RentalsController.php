@@ -42,4 +42,9 @@ class RentalsController
             include __DIR__ . '../../Views/rentals/update.php';
         }
     }
+    public function deleteRentals($id)
+    {
+        $this->rentalsModel->deteleteRental($id);
+        header('Location:/listRentals');
+    }
 }

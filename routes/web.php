@@ -24,6 +24,7 @@ $routes = [
     '#^/listRentals$#' => [$rentalsController, 'getAllRentals'],
     '#^/createRentals$#' => [$rentalsController, 'createRental'],
     '#^/rentals/update/(\d+)$#' => [$rentalsController, 'updateRental'],
+    '#^/rentals/delete/(\d+)$#' => [$rentalsController, 'deleteRentals'],
 ];
 
 $routeFound = false;

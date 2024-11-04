@@ -49,4 +49,11 @@ class Rentals
         $rental->bindParam(':id', $id);
         $rental->execute();
     }
+
+    public function deteleteRental($id)
+    {
+        $rental = $this->db->prepare("DELETE FROM rentals WHERE id=:id");
+        $rental->bindParam(':id', $id);
+        $rental->execute();
+    }
 }
