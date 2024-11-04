@@ -2,11 +2,12 @@
 
 require_once '../app/Controllers/SpaceController.php';
 require_once '../app/Controllers/CustomerController.php';
+require_once '../app/Controllers/RentalsController.php';
 require_once '../config/database.php';
 
 $spaceController = new SpaceController($db);
 $customerController = new CustomerController($db);
-
+$rentalsController = new RentalsController($db);
 $requestUri = $_SERVER['REQUEST_URI'];
 
 
@@ -20,6 +21,7 @@ $routes = [
     '#^/createCustomer$#' => [$customerController, 'createCustomer'],
     '#^/customers/delete/(\d+)$#' => [$customerController, 'deleteCustomer'],
     '#^/customers/update/(\d+)$#' => [$customerController, 'updateCustomer'],
+    '#^/listRentals$#' => [$rentalsController, 'getAllRentals'],
 ];
 
 $routeFound = false;

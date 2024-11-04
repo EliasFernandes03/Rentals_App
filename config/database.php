@@ -1,4 +1,4 @@
 <?php
 
-$db = new PDO('mysql:host=mysql_container;dbname=rentals_db', 'root', 'root_password');
+$db = new PDO('mysql:host=;dbname=', '', '');
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

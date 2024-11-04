@@ -4,7 +4,7 @@
 #### How to use
 - Fill the .env file with the right credentials , use the .env.template as a model
 - docker compose up -d 
--  Acesse: ``` http://localhost:8000 ```
+-  Acess: ``` http://localhost:8000 ```
 
 #### Technologies
 

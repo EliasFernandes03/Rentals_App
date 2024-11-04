@@ -66,7 +66,7 @@
                 <a href="/listCustomer">Customers</a>
             </div>
             <div class="buttons">
-                <a href="/list">Rentals</a>
+                <a href="/listRentals">Rentals</a>
             </div>
             <div class="buttons">
                 <a href="/list">Relation</a>
