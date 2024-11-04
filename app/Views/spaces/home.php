@@ -68,9 +68,6 @@
             <div class="buttons">
                 <a href="/listRentals">Rentals</a>
             </div>
-            <div class="buttons">
-                <a href="/list">Relation</a>
-            </div>
 
         </div>
 
