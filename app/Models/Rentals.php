@@ -22,9 +22,10 @@ class Rentals
 
     public function getOneRentals($id)
     {
-        $rental = $this->db->prepare("SELECT * FROM rentals WHERE id=:id");
+        $rental = $this->db->prepare("SELECT * FROM rentals WHERE id= :id");
+        $rental->bindParam(':id', $id);
         $rental->execute();
-        return $rental->fetchAll(PDO::FETCH_ASSOC);
+        return $rental->fetch(PDO::FETCH_ASSOC);
     }
     public function createRental($data)
     {
@@ -34,6 +35,18 @@ class Rentals
         $rental->bindParam(':rental_date', $data['rental_date']);
         $rental->bindParam('rental_duration', $data['rental_duration']);
         $rental->bindParam(':total_price', $data['total_price']);
+        $rental->execute();
+    }
+
+    public function updateRentals($id, $data)
+    {
+        $rental = $this->db->prepare("UPDATE rentals SET space_id = :space_id, customer_name = :customer_name, rental_date = :rental_date, rental_duration = :rental_duration, total_price = :total_price WHERE id = :id");
+        $rental->bindParam(':space_id', $data['space_id']);
+        $rental->bindParam(':customer_name', $data['customer_name']);
+        $rental->bindParam(':rental_date', $data['rental_date']);
+        $rental->bindParam(':rental_duration', $data['rental_duration']);
+        $rental->bindParam(':total_price', $data['total_price']);
+        $rental->bindParam(':id', $id);
         $rental->execute();
     }
 }

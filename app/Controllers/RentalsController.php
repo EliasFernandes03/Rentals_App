@@ -31,4 +31,15 @@ class RentalsController
             include __DIR__ . '../../Views/rentals/create.php';
         }
     }
+    public function updateRental($id)
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->rentalsModel->updateRentals($id, $_POST);
+            header('Location:/listRentals');
+        } else {
+            $rental = $this->rentalsModel->getOneRentals($id);
+            $spaces = $this->spaceModel->getAllSpaces();
+            include __DIR__ . '../../Views/rentals/update.php';
+        }
+    }
 }

@@ -23,6 +23,7 @@ $routes = [
     '#^/customers/update/(\d+)$#' => [$customerController, 'updateCustomer'],
     '#^/listRentals$#' => [$rentalsController, 'getAllRentals'],
     '#^/createRentals$#' => [$rentalsController, 'createRental'],
+    '#^/rentals/update/(\d+)$#' => [$rentalsController, 'updateRental'],
 ];
 
 $routeFound = false;

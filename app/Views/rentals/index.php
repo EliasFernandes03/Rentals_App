@@ -27,7 +27,7 @@ include dirname(__DIR__) . '/layouts/navbar.php';
                     <td><?= htmlspecialchars($rental['rental_duration']); ?></td>
 
                     <td>
-                        <a href="/update/<?= $rental['id']; ?>" class="btn btn-warning">Editar</a>
+                        <a href="/rentals/update/<?= $rental['id']; ?>" class="btn btn-warning">Editar</a>
                         <a href="/rentals/delete/<?= $rental['id']; ?>" class="btn btn-danger">Excluir</a>
                     </td>
                 </tr>
